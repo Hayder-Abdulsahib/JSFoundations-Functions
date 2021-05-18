@@ -37,10 +37,11 @@ function isOdd(n) {
 
 
 function oddsSmallerThan(n) {
-  if ((n % 2) === 0)
-  return n/2
-  else
+  if (isOdd(n))
   return (n-1)/2
+  else
+  return n/2
+  
 }
 
 /**
@@ -54,8 +55,8 @@ function oddsSmallerThan(n) {
  * squareOrDouble(9) -> 81
  */
 function squareOrDouble(n) {
-  if ((n % 2) !== 0)
-  return Math.pow(n,2)
+  if (isOdd(n))
+  return n*n
   else
   return n*2
 }
@@ -63,4 +64,4 @@ function squareOrDouble(n) {
 module.exports = { greet, isOdd, oddsSmallerThan, squareOrDouble };
 
 
-console.log( oddsSmallerThan(15));
+console.log( squareOrDouble(11));
